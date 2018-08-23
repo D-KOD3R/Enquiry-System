@@ -1,0 +1,12 @@
+<div class="container">
+	<h3>Respond a query</h3>
+ 	<%= form_for @enquiry, url: reply_enquiry_enquiry_path(@enquiry), method: :put do |f|%>
+	    <%= f.label :your_email %>
+	    <%= f.text_field :enquirer_email, id: "email_id", placeholder: "Your email..", type: 'email', class: "form-control", required: true, readonly: true  %>
+	    <%= f.label :your_query %>
+	    <%= f.text_area :enquiry_content, id: "subject", placeholder: "Write something..", style: "height:200px", class: "form-control", required: true, readonly: true %>
+		<%= f.label :response %>
+	    <%= f.text_area :response_content, id: "respond_subject", placeholder: "Write a response..", style: "height:200px", class: "form-control", required: true%>
+	    <%= f.submit "Update enquiry"%>
+  <% end %>
+</div> 

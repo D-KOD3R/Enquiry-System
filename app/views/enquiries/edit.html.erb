@@ -1,0 +1,12 @@
+<div class="container">
+	<h3>Assign a Employee</h3>
+ 	<%= form_for @enquiry do |f|%>
+	    <%= f.label :your_email %>
+	    <%= f.text_field :enquirer_email, id: "email_id", placeholder: "Your email..", type: 'email', class: "form-control", required: true, readonly: true  %>
+	    <%= f.label :your_query %>
+	    <%= f.text_area :enquiry_content, id: "subject", placeholder: "Write something..", style: "height:200px", class: "form-control", required: true, readonly: true %>
+	    <%= f.label :select_a_employee %>
+	    <%= f.collection_select :assigned_to_id, User.all, :id, :email, prompt: "Select an employee" %>
+	    <%= f.submit "Update enquiry"%>
+  <% end %>
+</div> 

@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Enquiries</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Enquirer's email</th>
+        <th>Status</th>
+        <th>Assigned Employee</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @enquiries.each do |enquiry| %>	
+	      <tr>
+	        <td><%= enquiry.id %></td>
+	        <td><%= enquiry.enquirer_email %></td>
+	        <td><%= enquiry.status %></td>
+	        <td><%= enquiry.assigned_employee.present? ? enquiry.assigned_employee.name : "No one" %></td>
+          <td><%= link_to 'Assign a employee', edit_enquiry_path(enquiry) if enquiry.unassigned? && current_user.role == 'admin' %></td>
+	        <td><%= link_to 'Reply', view_enquiry_enquiry_path(enquiry) if enquiry.assigned?  && current_user.role == 'employee' %></td>
+	      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

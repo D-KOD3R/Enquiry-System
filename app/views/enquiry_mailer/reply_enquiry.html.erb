@@ -1,0 +1,15 @@
+  <body>
+    <h1>Hello, <%= @enq_obj.try(:enquirer_email) %></h1>
+    <p>
+     Your query has been resolved please find the response below.<br/>
+    </p>
+    <h3>Query: </h3>
+    <p>
+      <%= @enq_obj.enquiry_content %>
+    </p>
+    <h4>Response: </h4>
+    <p>
+      <%= @enq_obj.response_content %>
+    </p>
+    <p>Happy to help!</p>
+  </body>

@@ -1,0 +1,10 @@
+<div class="container">
+	<h3>Contact Us</h3>
+ 	<%= form_for @enquiry do |f|%>
+	    <%= f.label :your_email %>
+	    <%= f.text_field :enquirer_email, id: "email_id", placeholder: "Your email..", type: 'email', class: "form-control", required: true  %>
+	    <%= f.label :your_query %>
+	    <%= f.text_area :enquiry_content, id: "subject", placeholder: "Write something..", style: "height:200px", required: true %>
+	    <%= f.submit "Submit your enquiry"%>
+  <% end %>
+</div> 
